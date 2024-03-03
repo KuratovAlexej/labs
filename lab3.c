@@ -5,7 +5,7 @@ int main() {
   char t[80];
   
   printf("Vvedite srtroky: ");
-  fgets(t, 80, stdin);
+  gets(t);
   
   for(int i=0; i<80; i++) {
     if(t[i] == 'a') {

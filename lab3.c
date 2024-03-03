@@ -3,12 +3,11 @@
 
 int main() {
   char t[80];
-  int i;
   
   printf("Vvedite srtroky: ");
   fgets(t, 80, stdin);
   
-  for(i=0; t[i]!='\0'; i++) {
+  for(int i=0; i<80; i++) {
     if(t[i] == 'a') {
       t[i] = 'A'; 
     }

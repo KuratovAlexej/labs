@@ -8,11 +8,10 @@ double square(double a, double b, double c) {
     double s = perimeter(a, b, c) / 2;
     return sqrt(s * (s - a) * (s - b) * (s - c));
 }
-int main(int argc, char *argv[])
-{
-	int a, b, c;
+int main(){
+	double a, b, c;
 	printf("Vvedite storony treugolnika: ");
-	scanf("%d %d %d", &a, &b, &c);
+	scanf("%lf %lf %lf", &a, &b, &c);
 	if (a + b <= c || a + c <= b || b + c <= a) {
         printf("Treugolnik s takimi storonami ne sushestvuyet.\n");
 	} else {

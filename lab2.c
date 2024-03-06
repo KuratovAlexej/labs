@@ -2,8 +2,8 @@
  
 int main() {
   int size;
-    printf("Vvedite razmernoct': ");
-    scanf("%d", &size);
+  printf("Vvedite razmernoct': ");
+  scanf("%d", &size);
   double matrix1[size][size]; 
   double sum1 = 0, sum2 = 0;
   printf("Vvedite matritsy:\n");

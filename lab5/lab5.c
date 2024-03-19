@@ -26,16 +26,20 @@ int main() {
  
     printf("\nVvedite operatsiyu('+','-','*'): "); 
     scanf(" %c", &st);
- 
-    if (st == '+') { 
-        sum(n, m1, m2); 
-    } else if (st == '-') { 
-        minus(n, m1, m2); 
-    } else if (st == '*') { 
-        impr(n, m1, m2); 
-    } else { 
-        printf("Nevernaya operatsiya.\n"); 
-    } 
- 
-    return 0; 
-} 
+    double* result = opermatrix(m1, m2, n, st);
+   printf("Result:\n");
+   for (int i = 0; i < n; i++) {
+       for (int j = 0; j < n; j++) {
+           printf("%.2lf ", result[i * n + j]);
+       }
+       printf("\n");
+   }
+   free(result);
+   for (int i = 0; i < n; i++) {
+       free(m1[i]);
+       free(m2[i]);
+   }
+   free(m1);
+   free(m2);
+   return 0;
+}

@@ -1,36 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "triangle.h"
-void sum(int n, double m[n][n], double m1[n][n]); 
-void minus(int n, double m[n][n], double m1[n][n]); 
-void impr(int n, double m[n][n], double m1[n][n]);
+double* opermatrix(double** m1, double** m2, int n, char st);
 int main() { 
     int n, i, j; 
     char st; 
  
     printf("size: "); 
     scanf("%d", &n); 
-    double m[n][n], m1[n][n]; 
+    double** m1 = (double**)malloc(n * sizeof(double*));
+   double** m2 = (double**)malloc(n * sizeof(double*));
+   for (int i = 0; i < n; i++) {
+       m1[i] = (double*)malloc(n * sizeof(double));
+       m2[i] = (double*)malloc(n * sizeof(double));
+   }
  
     printf("Vvedite elementy pervoy matritsy:\n"); 
     for (i = 0; i < n; i++) 
         for (j = 0; j < n; j++) 
-            scanf("%lf", &m[i][j]); 
+            scanf("%lf", &m1[i][j]); 
  
     printf("Vvedite elementy vtoroy matritsy:\n"); 
     for (i = 0; i < n; i++) 
         for (j = 0; j < n; j++) 
-            scanf("%lf", &m1[i][j]); 
+            scanf("%lf", &m2[i][j]); 
  
     printf("\nVvedite operatsiyu('+','-','*'): "); 
     scanf(" %c", &st);
  
     if (st == '+') { 
-        sum(n, m, m1); 
+        sum(n, m1, m2); 
     } else if (st == '-') { 
-        minus(n, m, m1); 
+        minus(n, m1, m2); 
     } else if (st == '*') { 
-        impr(n, m, m1); 
+        impr(n, m1, m2); 
     } else { 
         printf("Nevernaya operatsiya.\n"); 
     } 

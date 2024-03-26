@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 double** opermatrix(double** matrix1, double** matrix2, int n, char st) {
-    double** result = (double**)malloc(n * n * sizeof(double));
+    double** result = (double**)malloc(n * sizeof(double));
     for (int i = 0; i < n; i++) {
         result[i] = (double*)malloc(n * sizeof(double));
     }

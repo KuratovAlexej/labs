@@ -1,6 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 double** opermatrix(double** m1, double** m2, int n, char st);
+void print_matrix(double** matrix, int n) { 
+    for (int i = 0; i < n; i++) { 
+        for (int j = 0; j < n; j++) { 
+            printf("%.2lf ", matrix[i][j]); 
+        } 
+        printf("\n"); 
+    } 
+} 
 int main() { 
     int n, i, j; 
     char st; 
@@ -26,16 +34,15 @@ int main() {
             scanf("%lf", &m2[i][j]); 
         }
     }
+    printf("Pervaya matritsa:\n"); 
+    print_matrix(m1,n); 
+    printf("Vtoraya matritsa:\n"); 
+    print_matrix(m2,n); 
     printf("\nVvedite operatsiyu('+','-','*'): "); 
     scanf(" %c", &st);
     double** result = opermatrix(m1, m2, n, st);
     printf("Result:\n");
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            printf("%.2lf ", result[i][j]);
-        }
-        printf("\n");
-    }
+    print_matrix(result,n);
     for (int i = 0; i < n; i++) {
         free(result[i]);
     }

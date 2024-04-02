@@ -16,12 +16,12 @@ void obr(int n) {
  
 int main() { 
     int N;
-    printf("Vvedite natural'noye chislo N: ");
+    printf("Vvedite naturalnoye chislo N: ");
     scanf("%d", &N);
-    printf("chislo v pryamom poryadke: ");
+    printf("Chislo v pryamom poryadke: ");
     pr(N);
     printf("\n");
-    printf("chislo v obratnom poryadke: ");
+    printf("Chislo v obratnom poryadke: ");
     obr(N); 
     printf("\n"); 
     return 0; 

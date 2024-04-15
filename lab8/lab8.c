@@ -49,6 +49,25 @@ int main() {
     if (file == NULL) { 
         perror("Oshibka pri otkrytii fayla"); 
         return 1; 
+    }
+    while (fscanf(file, "%s %s %d %s %lf", people[index].name, people[index].surname, &people[index].year, people[index].gender, &people[index].height) == 5) { 
+        index++; 
+        if (index >= 100) { 
+            break; 
+        } 
+    } 
+    fclose(file);  
+    printf("Vvedite perviy kriteriy sortirovki (name, surname, year, gender, height): "); 
+    scanf("%s", perSort); 
+    qsort(people, index, sizeof(humen), compare); 
+    for (int i = 0; i < index; i++) { 
+        printf("%s %s %d %s %.2f\n", people[i].name, people[i].surname, people[i].year, people[i].gender, people[i].height); 
+    } 
+    printf("Vvedite vtoroy kriteriy sortirovki (name, surname, year, gender, height): "); 
+    scanf("%s", vtorSort); 
+    qsort(people, index, sizeof(humen), compare); 
+    for (int i = 0; i < index; i++) { 
+        printf("%s %s %d %s %.2f\n", people[i].name, people[i].surname, people[i].year, people[i].gender, people[i].height); 
     } 
     return 0;
 }

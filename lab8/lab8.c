@@ -41,3 +41,14 @@ int compare(const void *a, const void *b) {
  
     return result; 
 } 
+int main() { 
+    FILE *file; 
+    humen people[100];  
+    int index = 0;  
+    file = fopen("t.txt", "r"); 
+    if (file == NULL) { 
+        perror("Oshibka pri otkrytii fayla"); 
+        return 1; 
+    } 
+    return 0;
+}

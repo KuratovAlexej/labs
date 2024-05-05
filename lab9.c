@@ -6,7 +6,26 @@ double calculator(char* vyrazhenie){
     char* ntoken = NULL;
     double otvet = 0;
     token = strtok(vyrazhenie, "");
+    while (token != NULL) {
+         if (strcmp(token, "+") == 0) {
+            token = strtok(NULL, " ");
+            otvet += atof(token);
+        } else if (strcmp(token, "-") == 0) {
+            token = strtok(NULL, " ");
+            otvet -= atof(token);
+        } else {
+            otvet += atof(token);
+        }
+        token = strtok(NULL, " ");
+    }
+    return otvet;
 }
 int main(){
+    char phrase[100];
+    printf("Введите выражение: ");
+    fgets(phrase, 100, stdin);
+    phrase[strlen(phrase) - 1] = '\0';
+    double result = calculate(phrase);
+    printf("Результат: %.2lf\n", result);
     return 0;
 }

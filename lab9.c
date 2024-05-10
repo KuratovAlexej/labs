@@ -22,10 +22,10 @@ double calculator(char* vyrazhenie){
 }
 int main(){
     char phrase[100];
-    printf("Введите выражение: ");
+    printf("Vvedite vyrazheniye: ");
     fgets(phrase, 100, stdin);
     phrase[strlen(phrase) - 1] = '\0';
     double result = calculate(phrase);
-    printf("Результат: %.2lf\n", result);
+    printf("Result: %.2lf\n", result);
     return 0;
 }

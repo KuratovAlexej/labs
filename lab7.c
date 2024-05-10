@@ -21,7 +21,7 @@ void sortYear(humen mass[], int n){
         for(int j = 0; j < n - 1; j++){
             if (mass[j].year > mass[j + 1].year){
                 humen temp = mass[j];
-                mass[j]= mass[j + 1];
+                mass[j] = mass[j + 1];
                 mass[j + 1] = temp;
             }
         }

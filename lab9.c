@@ -25,7 +25,7 @@ int main(){
     printf("Vvedite vyrazheniye: ");
     fgets(phrase, 100, stdin);
     phrase[strlen(phrase) - 1] = '\0';
-    double result = calculate(phrase);
+    double result = calculator(phrase);
     printf("Result: %.2lf\n", result);
     return 0;
 }

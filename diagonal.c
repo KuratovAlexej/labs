@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 int sumDiagonal(int rows, int cols, int matrix[rows][cols], int* SumGlav, int* SumPob) {
-
     *SumGlav = 0;
     *SumPob = 0;
 
@@ -26,6 +25,7 @@ int main() {
     printf("Введите элементы матрицы:\n");
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
+            printf("Элемент [%d][%d]: ", i, j);
             scanf("%d", &matrix[i][j]);
         }
     }
